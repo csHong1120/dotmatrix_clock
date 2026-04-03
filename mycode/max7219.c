@@ -18,7 +18,7 @@
 /* Private define ------------------------------------------------------------*/
 	#define MAX_NUMBER_DIGIT		6
 	#define MAX_LOCALIP_DIGIT		15
-  #define MAX_CLOCK3_DIGIT		4
+    #define MAX_CLOCK3_DIGIT		4
 	#define FONT_WIDTH				5
 	#define FONT_HEIGHT				7
 
