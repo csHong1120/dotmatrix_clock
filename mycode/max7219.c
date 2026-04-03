@@ -1,4 +1,4 @@
-/******************** (C) COPYRIGHT 2008 Motex CO., LTD ********************
+/******************** (C) COPYRIGHT 2026 csHong  ********************
 * File Name			: max7219.c
 * Author			: Hong Chong Sik
 * Date First Issued	: 09/09/2008
