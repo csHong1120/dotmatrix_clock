@@ -7,13 +7,11 @@
 ## ignore ##############################################################
 EWARM/settings/*.dnx
 EWARM/settings/Project.wsdt
-EWARM/settings/PCU.dbgdt
-EWARM/settings/PCU.PCU.cspy.bat
-EWARM/settings/PCU.PCU.cspy.ps1
-EWARM/settings/PCU.PCU.driver.xcl
-EWARM/settings/PCU.PCU.general.xcl
-EWARM/PCU/
+EWARM/settings/DotmatrixCubeMx_V1_0.dbgdt
+EWARM/settings/DotmatrixCubeMx_V1_0.DotmatrixCubeMx_V1_0.cspy.bat
+EWARM/settings/DotmatrixCubeMx_V1_0.DotmatrixCubeMx_V1_0.cspy.ps1
+EWARM/settings/DotmatrixCubeMx_V1_0.DotmatrixCubeMx_V1_0.driver.xcl
+EWARM/settings/DotmatrixCubeMx_V1_0.DotmatrixCubeMx_V1_0.general.xcl
+EWARM/DotmatrixCubeMx_V1_0/
+EWARM/DotmatrixCubeMx_V1_0/Obj/
 .vscode/
-
-EWARM/PCU/Exe/PCU.sim
-EWARM/PCU/Obj/
