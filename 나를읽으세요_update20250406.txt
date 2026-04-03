@@ -1,0 +1,48 @@
+1. OneDrive에 IAR9.3 CubeMX 버전의 시계 소스를 올려 놓음
+   - 기존의 Google Drive 의 파일은 유지하되, 앞으로는 이 파일로만 업데이트 진행함.
+   - 일정 시점이 지나면 지울 예정
+
+2. 20230812 오늘 한 일.
+    - 플래쉬 저장 / 읽기 루틴 삽입 후 테스트
+    - USB to 232 테스트 진행 / 시계 보드가 UART3에서 tx, rx가 서로 바뀜.  회로도는 정상으로 되어 있음.(수정되었음)
+
+
+3. 20230815 오늘 한 일.
+    - CubeMX 를 활용할 경우 이 폴더에 있는 DotmatrixCubeMx_V1_0.ioc 를 사용하여 수정 할 것.  version이 1.0 임..
+
+4. 20250406 오늘 한 일. -> DotmatrixCubeMx_V1_1 에서 DotmatrixCubeMx_V1_2 로 변경함.
+    - 날씨 정보를 가져오는 싸이트가 내용이 변경되었음.
+    - 날씨의 정보를 불러오지 못해, 다음 루틴인 시간 설정 루틴으로 진입이 안됨
+    - 아래 처럼 변경하여 전체적으로 에러를 막아둠.  날씨 정보를 불러오는 부분(ESP8266코드)을 변경해야 함.
+
+	void WifiProcess(byte sq) 함수에서 아래의  명령어 전송하는 부분은 임시로 바꿔줌.
+	case WIFISEQ_WEATHER://3
+		sys.WiFiSeqBackup	= sys.WiFiSeq;
+		sys.WiFiSeq 		= WIFISEQ_MSGWAIT;//응답대기
+		Serial[CH2].RcvOK 	= NG;
+		// SendString(CH2, (byte *)"D00"); --> 명령에 응답이 없음
+		SendString(CH2, (byte *)"D03");//	--> 임시로 명령을 바꾸어서 시간 설정은 가능하도록 변경
+		break;
+
+
+4. 20250412 오늘 한 일. -> DotmatrixCubeMx_V1_2 로 변경함.
+	- #define BUZZ_BUG_FIXED 생성
+	- 시계를 조용한 곳에서 켜두면, 아무런 입력이 없어도 부저에서 "찌글찌글" 소리가 남.
+ 	- 버그를 해결 하기 위해 부저가 꺼지는 상태가 되면, GPIO output 형태로 BuzzPin을 바꿔줌.
+	-  Buzz를 구동시에만 PWM을 살려서 소리를 냄.
+
+5. 20250412 오늘 한 일. -> 고덕 지역코드 추가(7 : 'D')
+	enum {
+		AREA_CODE_JACKJEON_DONG,//0
+		AREA_CODE_GONGNEUNG_DONG,//1
+		AREA_CODE_JUNGNEUNG2_DONG,//2
+		AREA_CODE_PAJU_UNJUNG1_DONG,//3
+		AREA_CODE_ASAN_TANGJUNG_MYUN,//4
+		AREA_CODE_CHUNGLA,//5
+	    	AREA_CODE_OSAN,//6
+		AREA_CODE_GODEOK,//7
+		AREA_CODE_MAX
+	};
+
+
+6. 20250704 오늘 한 일. -> 실내온도 / 습도를 큰 글자로 표현하기
