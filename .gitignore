@@ -1,0 +1,19 @@
+#########################################################################
+##
+## Dot Matrix
+##
+#########################################################################
+
+## ignore ##############################################################
+EWARM/settings/*.dnx
+EWARM/settings/Project.wsdt
+EWARM/settings/PCU.dbgdt
+EWARM/settings/PCU.PCU.cspy.bat
+EWARM/settings/PCU.PCU.cspy.ps1
+EWARM/settings/PCU.PCU.driver.xcl
+EWARM/settings/PCU.PCU.general.xcl
+EWARM/PCU/
+.vscode/
+
+EWARM/PCU/Exe/PCU.sim
+EWARM/PCU/Obj/
