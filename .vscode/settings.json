@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "iosfwd": "c",
+        "biosapp.h": "c",
+        "main.h": "c"
+    }
+}
